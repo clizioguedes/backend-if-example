@@ -1,0 +1,152 @@
+{
+	"env": {
+		"es6": true,
+		"node": true,
+		"browser": true,
+		"jest": true
+	},
+	"extends": [
+		"airbnb-base",
+		"airbnb",
+		"prettier",
+		"plugin:@typescript-eslint/recommended",
+		"prettier/@typescript-eslint",
+		"plugin:prettier/recommended"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly",
+		"shallow": true,
+		"mount": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"@typescript-eslint",
+		"prettier"
+	],
+	"rules": {
+		"prettier/prettier": "error",
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never"
+			}
+		],
+		"no-template-curly-in-string": "off",
+		"sort-imports": [
+			"error",
+			{
+				"ignoreCase": true,
+				"ignoreDeclarationSort": true
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					"builtin",
+					"external",
+					"internal"
+				],
+				"pathGroups": [
+					{
+						"pattern": "react",
+						"group": "external",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": [
+					"react"
+				],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		],
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [
+					".js",
+					".jsx"
+				]
+			}
+		],
+		"react/prop-types": "off", // old [2],
+		"react/self-closing-comp": [
+			0
+		],
+		"react/jsx-props-no-spreading": "off",
+		"react/forbid-prop-types": [
+			0
+		],
+		"react/prefer-stateless-function": [
+			0
+		],
+		"react/no-unused-prop-types": [
+			0
+		],
+		"react/state-in-constructor": [
+			0
+		],
+		"react/destructuring-assignment": [
+			0
+		],
+		"react-hooks/rules-of-hooks": "error",
+		"react/display-name": "off",
+		"react/react-in-jsx-scope": "off",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/no-unstable-nested-components": "off",
+		"require-await": "error",
+		"jsx-a11y/anchor-is-valid": "off",
+		"jsx-a11y/tabindex-no-positive": "off",
+		"no-param-reassign": [
+			"error",
+			{
+				"props": false
+			}
+		],
+		"no-underscore-dangle": [
+			"error",
+			{
+				"allow": [
+					"__types__"
+				]
+			}
+		],
+		"no-console": "warn",
+		"no-debugger": "warn",
+		"no-restricted-imports": [
+			"error",
+			{
+				"patterns": [
+					"../*"
+				]
+			}
+		],
+		"arrow-body-style": [
+			"warn",
+			"as-needed"
+		], // old [0]
+		"camelcase": "off"
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {},
+			"import/resolver": {
+				"node": {
+					"paths": [
+						"src"
+					]
+				}
+			}
+		}
+	}
+}
